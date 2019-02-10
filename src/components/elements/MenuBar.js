@@ -6,9 +6,11 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
-// import MenuIcon from '@material-ui/icons/Menu'
+import Icon from '@material-ui/core/Icon'
+import MenuIcon from '@material-ui/icons/Menu'
+import Logo from '@material-ui/icons/Image'
 
-const styles = {
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
@@ -19,23 +21,29 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
-}
+})
 
 const MenuBar = (props) => {
+
   const { classes } = props;
+  
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-            {/* <MenuIcon /> */}
-          </IconButton>
+          <Logo />
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Logo - HourTech
           </Typography>
-          <Button color="inherit">Item 1</Button>
-          <Button color="inherit">Item 2</Button>
-          <Button color="inherit">Item 3</Button>
+          <IconButton color="inherit">
+            Item 1
+          </IconButton>
+          <IconButton color="inherit">
+            Item 2
+          </IconButton>
+          <IconButton color="inherit">
+            Item 3
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>

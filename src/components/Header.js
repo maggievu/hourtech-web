@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import MenuBar from './elements/MenuBar'
+import NavBar from './elements/NavBar'
 
 class Header extends Component {
   render() {
     return (
-      <MenuBar />
+      <div>
+        <NavBar />
+
+      </div>
     )
   }
 }
