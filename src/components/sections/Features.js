@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import Tabs from '@material-ui/core/Tabs'
-import Tab from '@material-ui/core/Tab'
-import FeaturesClients from './FeaturesClients'
+import { Tab, Tabs } from '@material-ui/core'
+import FeaturesClient from './FeaturesClient'
+import FeaturesTechky from './FeaturesTechky';
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
 }
 
 class Features extends Component {
   state = {
-    value: 0,
+    value: 'client',
   }
   
   handleChange = (event, value) => {
@@ -24,7 +21,7 @@ class Features extends Component {
     const { classes } = this.props
   
     return (
-      <div classes={{root: classes.root}} className='wrapper'>
+      <div className='wrapper marginY'>
         <Tabs
           value={this.state.value}
           onChange={this.handleChange}
@@ -32,11 +29,11 @@ class Features extends Component {
           textColor="primary"
           centered
         >
-          <Tab label="For Clients" />
-          <Tab label="For Techkies" />
+          <Tab label='For Clients' value='client' />
+          <Tab label='For Techkies' value='techky' />
         </Tabs>
 
-        <FeaturesClients />
+        { this.state.value === 'client' ? <FeaturesClient /> : <FeaturesTechky /> }
         
       </div>
     )
