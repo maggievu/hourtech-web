@@ -22,11 +22,12 @@ class Features extends Component {
   
     return (
       <div className='wrapper marginY'>
+        <h2 className='center'>Features</h2>
         <Tabs
           value={this.state.value}
           onChange={this.handleChange}
-          indicatorColor="primary"
-          textColor="primary"
+          indicatorColor="red"
+          textColor="#fff"
           centered
         >
           <Tab label='For Clients' value='client' />

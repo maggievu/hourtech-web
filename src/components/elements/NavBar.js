@@ -20,7 +20,7 @@ import SearchIcon from '@material-ui/icons/Search'
 const styles = theme => ({
   root: {
     width: '100%',
-    backgroundImage: 'linear-gradient(90deg, #154b9c 0%, #0bbcd4 100%)',
+    background: '#0bbcd4',
   },
   appBar: {
     backgroundColor: 'initial',
@@ -166,6 +166,12 @@ class NavBar extends Component {
           <IconButton color="inherit">
             <Contact />
           </IconButton>
+          <p>About</p>
+        </MenuItem>
+        <MenuItem onClick={this.handleProfileMenuOpen}>
+          <IconButton color="inherit">
+            <Contact />
+          </IconButton>
           <p>Contact</p>
         </MenuItem>
       </Menu>
@@ -202,6 +208,10 @@ class NavBar extends Component {
               <Button color="inherit">
                 <Pricing />
                 <p>Pricing</p>
+              </Button>
+              <Button color="inherit">
+                <Contact />
+                <p>About</p>
               </Button>
               <Button color="inherit">
                 <Contact />
