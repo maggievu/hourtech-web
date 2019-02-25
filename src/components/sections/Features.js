@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Tab, Tabs } from '@material-ui/core'
 import FeaturesClient from './FeaturesClient'
-import FeaturesTechky from './FeaturesTechky';
+import FeaturesTechky from './FeaturesTechky'
+// import white from '@material-ui/core/colors/white'
 
 const styles = {
 }
@@ -26,8 +27,8 @@ class Features extends Component {
         <Tabs
           value={this.state.value}
           onChange={this.handleChange}
-          indicatorColor="red"
-          textColor="#fff"
+          indicatorColor="primary"
+          textColor="secondary"
           centered
         >
           <Tab label='For Clients' value='client' />

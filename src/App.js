@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import grey from '@material-ui/core/colors/grey';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import cyan from '@material-ui/core/colors/cyan'
+import blue from '@material-ui/core/colors/blue'
 
 import Header from './components/Header'
 import Main from './components/Main'
@@ -10,8 +11,8 @@ import './App.css'
 
 const theme = createMuiTheme({
   palette: {
-    primary: grey,
-    // secondary: 'purple',
+    primary: cyan,
+    secondary: blue,
   },
   status: {
     danger: 'orange',

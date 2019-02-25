@@ -22,6 +22,7 @@ const styles = theme => ({
   rootGrid: {
     flexGrow: 1,
     width: '100%',
+    height: 600,
     marginTop: 0,
     alignItems: 'center',
     [theme.breakpoints.down('xs')]: {
