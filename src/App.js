@@ -11,8 +11,15 @@ import './App.css'
 
 const theme = createMuiTheme({
   palette: {
-    primary: cyan,
-    secondary: blue,
+    primary: {
+      main: '#13bcd4',
+      light: '#5ac7d9',
+      lightest: '#b7e3ec',
+    },
+    secondary: {
+      main: '#154b9c',
+      light: '#478fcc',
+    },
   },
   status: {
     danger: 'orange',

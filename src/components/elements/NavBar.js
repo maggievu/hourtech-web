@@ -20,15 +20,15 @@ import SearchIcon from '@material-ui/icons/Search'
 const styles = theme => ({
   root: {
     width: '100%',
-    background: '#0bbcd4',
+    background: theme.palette.primary.main,
   },
   appBar: {
-    backgroundColor: 'initial',
     boxShadow: 'none',
+    color: theme.palette.common.white,
   },
   toolBar: {
     // darkBlue: '#154b9c',
-    // darkCyan: '#0bbcd4',
+    // darkCyan: '#13bcd4',
     // lightBlue: '#478fcc',
     // lightCyan: '#5ac7d9',
     // backgroundColor: 'transparent',
@@ -179,7 +179,11 @@ class NavBar extends Component {
     
     return (
       <div className={classes.root}>
-        <AppBar position="static" classes={{root: classes.appBar}} className='wrapper'>
+        <AppBar 
+          position="static" 
+          className={'wrapper ' + classes.appBar}
+          color="primary"
+        >
           <Toolbar className={classes.toolBar}>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <Image />

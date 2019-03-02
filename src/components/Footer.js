@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import SocialMenu from './elements/SocialMenu'
 
-const styles = {
+const styles = theme => ({
   root: {
     background: '#000',
-    color: '#0bbcd4',
+    color: theme.palette.primary.main,
   },
   rootFlex: {
     display: 'flex',
@@ -13,18 +14,14 @@ const styles = {
   flexChildren: {
     flexGrow: 1,
   },
-}
+})
 
 const Footer = (props) => (
   <footer className={props.classes.root}>
     <div className={'wrapper ' + props.classes.rootFlex}>
       <p className={props.classes.flexChildren}>HourTech</p>
       <p className={props.classes.flexChildren}>HourTech copyright 2019</p>
-      <ul className={props.classes.flexChildren}>
-        <li><a>FB</a></li>
-        <li><a>LI</a></li>
-        <li><a>TW</a></li>
-      </ul>
+      <SocialMenu className={props.classes.flexChildren} />
     </div>
   </footer>
 )
