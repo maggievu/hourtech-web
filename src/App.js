@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import cyan from '@material-ui/core/colors/cyan'
-import blue from '@material-ui/core/colors/blue'
+// import cyan from '@material-ui/core/colors/cyan'
+// import blue from '@material-ui/core/colors/blue'
 
 import Header from './components/Header'
 import Main from './components/Main'

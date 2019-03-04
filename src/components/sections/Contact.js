@@ -10,10 +10,8 @@ class Contact extends Component {
         this.state = {
             userName: "",
             userEmail: "",
-            userSubject: "",
             userMessage: "",
-            userSubscribe: false,
-            sending: false,
+            // sending: false,
             sent: false
         }
 
@@ -24,39 +22,44 @@ class Contact extends Component {
     }
 
     handleChange(e) {
-        const stateName = e.target.name
-        const stateValue = e.target.type === "checkbox" ? e.target.checked : e.target.value
         this.setState({
-            [stateName]: stateValue
+            [e.target.name]: e.target.value
         })
     }
 
-    async handleSubmit(e) {
+    handleSubmit(e) {
         e.preventDefault()
         this.setState({
-            sending: true
+            sent: true
         })
-
-        await axios.post(this.state)
-            .then(res => {
-                if (res.data.message === 'success') {
-                    this.setState({
-                        sending: false,
-                        sent: true
-                    })
-                } else {
-                    alert("Something's not right... Would you like to try again?")
-                }
-
-            })
-            .catch(err => {
-                console.log('ERROR on front-end ' + err)
-            })
     }
+
+    // async handleSubmit(e) {
+    //     e.preventDefault()
+    //     this.setState({
+    //         sending: true
+    //     })
+
+    //     await axios.post(this.state)
+    //         .then(res => {
+    //             if (res.data.message === 'success') {
+    //                 this.setState({
+    //                     sending: false,
+    //                     sent: true
+    //                 })
+    //             } else {
+    //                 alert("Something's not right... Would you like to try again?")
+    //             }
+
+    //         })
+    //         .catch(err => {
+    //             console.log('ERROR on front-end ' + err)
+    //         })
+    // }
 
     renderForm() {
         return (
-            <form className="contact-form container" onSubmit={this.handleSubmit}>
+            <form className="contact-form wrapper" onSubmit={this.handleSubmit}>
                 <h2>Contact Us</h2>
                 <label>
                     <span>Name: </span>
@@ -78,15 +81,6 @@ class Contact extends Component {
                     />
                 </label>
                 <label>
-                    <span>Subject: </span>
-                    <input
-                        type="text"
-                        name="userSubject"
-                        value={this.state.userSubject}
-                        onChange={this.handleChange}
-                    />
-                </label>
-                <label>
                     <span style={{ verticalAlign: 'top', marginTop: '.5rem' }}>Message: </span>
                     <textarea
                         name="userMessage"
@@ -95,17 +89,9 @@ class Contact extends Component {
                         required
                     />
                 </label>
-                <label>
-                    <input
-                        type="checkbox"
-                        name="userSubscribe"
-                        checked={this.state.userSubscribe}
-                        onChange={this.handleChange}
-                    />
-                    Did you join in the conversation in our discussion board?
-                </label>
                 <button type="submit">
-                    {this.state.sending ? <span><span class="fas fa-spinner fa-spin"></span> Sending</span> : "Send message"}
+                    {/* {this.state.sending ? <span><span class="fas fa-spinner fa-spin"></span> Sending</span> : "Send message"} */}
+                    Send
                 </button>
             </form>
         )
@@ -113,18 +99,14 @@ class Contact extends Component {
 
     renderSuccess() {
         return (
-            <div className="contact-success container">
+            <div className="contact-success wrapper">
                 <h2>Contact Us</h2>
-                <p>Thank you for contacting us. We'll get back to you within 5 days. Or you can <a href="mailto:maggievu91@gmail.com?subject=Hello%20from%20Climate%20Guide%20user">email us directly</a>. </p>
+                <p>Thank you for contacting us. We'll get back to you within 5 days. Or you can <a href="mailto:maggievu91@gmail.com?subject=Hello%20from%20HourTech%20user">email us directly</a>. </p>
                 <div className="contact-success-results">
                     <p><strong>Your message</strong></p>
                     <p>Name: {this.state.userName}</p>
                     <p>Email*: {this.state.userEmail}</p>
-                    <p>Subject: {this.state.userSubject}</p>
                     <p>Message*: {this.state.userMessage}</p>
-                    <p>
-                        I {this.state.userSubscribe ? "am" : "am not"} a member of Climate Guide's discussion board.
-                    </p>
                 </div>
             </div>
         )

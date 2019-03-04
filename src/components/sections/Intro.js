@@ -49,10 +49,10 @@ const Intro = (props) => (
           <h2 style={{ marginLeft: 24 }}>HourTech</h2>
           <p style={{marginLeft: 24}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor felis, dignissim quis nisl porta, euismod tincidunt massa. In finibus vehicula lectus, eu faucibus felis euismod id. Sed quis orci eget libero placerat suscipit eu at lectus. Duis tincidunt auctor elit, quis cursus sapien fringilla vel. Vestibulum et mauris ut augue porta pretium. Cras auctor tellus in tellus venenatis, vel porttitor erat fringilla. Fusce quis placerat nunc.</p>
           <div>
-            <a href="#">
+            <a href="#ios">
               <img src={this} alt="Download for iOS" />
             </a>
-            <a href="#">
+            <a href="#android">
               <img src={this} alt="Download for Android" />
             </a>
           </div>
