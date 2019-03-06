@@ -13,13 +13,21 @@ const styles = theme => ({
     rootFlex: {
         display: 'flex',
         flexFlow: 'row wrap',
+        justifyContent: 'center',
+        marginTop: '1rem',
     },
+    image: {
+        maxWidth: 870,
+        borderRadius: 10,
+    }
 })
 
 const Team = (props) => (
-    <section className="wrapper">
-        <h2 className="center">Our Team</h2>
-        <img src={team} alt="HourTech Team" className="team_pic" />
+    <section className="wrapper center">
+        <h2>About Us</h2>
+        <p>
+            <img src={team} alt="HourTech Team" className={props.classes.image} />
+        </p>
 
         <div className={"team-members-container " + props.classes.rootFlex}>
 

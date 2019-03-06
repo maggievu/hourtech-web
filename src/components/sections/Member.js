@@ -3,16 +3,19 @@ import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
     flexChildren: {
-        flexBasis: 380,
-        margin: 10,
-        flexGrow: 1,
+        flexBasis: 250,
+        margin: '1rem 3rem',
         flexShrink: 1,
     },
+    image: {
+        maxWidth: 150,
+        borderRadius: 15,
+    }
 })
 
 const Member = (props) => (
     <div className={props.classes.flexChildren}>
-        <img src={props.memberImg} alt={props.memberName + "'s photo"} />
+        <img src={props.memberImg} alt={props.memberName + "'s photo" }className={props.classes.image} />
         <h3>{props.memberName}</h3>
         <p>{props.memberRole}</p>
         <p>{props.memberDesc}</p>

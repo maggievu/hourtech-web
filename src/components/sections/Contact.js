@@ -1,8 +1,27 @@
-// Form.js use React local state management to render the notification of successfully sent message
-
 import React, { Component } from "react"
+import { withStyles } from '@material-ui/core/styles'
 import axios from 'axios'
 // import path from '../discussion-board/path'
+
+const styles = (theme) => ({
+    form: {
+
+    },
+    formControl: {
+        display: 'block',
+    },
+    label: {
+        width: 100,
+        display: 'inline-block',
+        textAlign: 'right',
+        marginRight: 10,
+    },
+    container: {
+        maxWidth: 500,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    }
+})
 
 class Contact extends Component {
     constructor(props) {
@@ -60,39 +79,41 @@ class Contact extends Component {
     renderForm() {
         return (
             <form className="contact-form wrapper" onSubmit={this.handleSubmit}>
-                <h2>Contact Us</h2>
-                <label>
-                    <span>Name: </span>
-                    <input
-                        type="text"
-                        name="userName"
-                        value={this.state.userName}
-                        onChange={this.handleChange}
-                    />
-                </label>
-                <label>
-                    <span>Email: </span>
-                    <input
-                        type="email"
-                        name="userEmail"
-                        value={this.state.userEmail}
-                        onChange={this.handleChange}
-                        required
-                    />
-                </label>
-                <label>
-                    <span style={{ verticalAlign: 'top', marginTop: '.5rem' }}>Message: </span>
-                    <textarea
-                        name="userMessage"
-                        value={this.state.userMessage}
-                        onChange={this.handleChange}
-                        required
-                    />
-                </label>
-                <button type="submit">
-                    {/* {this.state.sending ? <span><span class="fas fa-spinner fa-spin"></span> Sending</span> : "Send message"} */}
-                    Send
-                </button>
+                <h2 className='center'>Contact Us</h2>
+                <div className={this.props.classes.container}>
+                    <label className={this.props.classes.formControl}>
+                        <span className={this.props.classes.label}>Name: </span>
+                        <input
+                            type="text"
+                            name="userName"
+                            value={this.state.userName}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <label className={this.props.classes.formControl}>
+                        <span className={this.props.classes.label}>Email: </span>
+                        <input
+                            type="email"
+                            name="userEmail"
+                            value={this.state.userEmail}
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </label>
+                    <label className={this.props.classes.formControl}>
+                        <span className={this.props.classes.label} style={{ verticalAlign: 'top', marginTop: '.5rem' }}>Message: </span>
+                        <textarea
+                            name="userMessage"
+                            value={this.state.userMessage}
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </label>
+                    <button type="submit" className={this.props.classes.label}>
+                        {/* {this.state.sending ? <span><span class="fas fa-spinner fa-spin"></span> Sending</span> : "Send message"} */}
+                        Send
+                    </button>
+                </div>
             </form>
         )
     }
@@ -100,9 +121,9 @@ class Contact extends Component {
     renderSuccess() {
         return (
             <div className="contact-success wrapper">
-                <h2>Contact Us</h2>
-                <p>Thank you for contacting us. We'll get back to you within 5 days. Or you can <a href="mailto:maggievu91@gmail.com?subject=Hello%20from%20HourTech%20user">email us directly</a>. </p>
-                <div className="contact-success-results">
+                <h2 className='center'>Contact Us</h2>
+                <div className={"contact-success-results " + this.props.classes.container}>
+                    <p>Thank you for contacting us. We'll get back to you within 5 days. Or you can <a href="mailto:maggievu91@gmail.com?subject=Hello%20from%20HourTech%20user">email us directly</a>. </p>
                     <p><strong>Your message</strong></p>
                     <p>Name: {this.state.userName}</p>
                     <p>Email*: {this.state.userEmail}</p>
@@ -117,4 +138,4 @@ class Contact extends Component {
     }
 }
 
-export default Contact
+export default (withStyles)(styles)(Contact)
