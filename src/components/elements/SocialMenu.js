@@ -15,7 +15,7 @@ const navLinks = pages.map((page, i) => (
       key={i}
     >
       <a href={'www.' + page + '.com'}>
-        <span className={'fab fa-' + page}>{page}</span>
+        <span className={'fab fa-' + page}></span>
       </a>
     </li>
   )

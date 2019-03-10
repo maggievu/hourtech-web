@@ -25,6 +25,8 @@ const styles = theme => ({
   appBar: {
     boxShadow: 'none',
     color: theme.palette.common.white,
+    paddingLeft: 0,
+    paddingRight: 0,
   },
   toolBar: {
     // darkBlue: '#154b9c',

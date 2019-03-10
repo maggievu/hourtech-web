@@ -6,6 +6,10 @@ const styles = theme => ({
         flexBasis: 250,
         margin: '1rem 3rem',
         flexShrink: 1,
+        [theme.breakpoints.down('768')]: {
+            flexBasis: 350,
+            margin: '1rem 0',
+        },
     },
     image: {
         maxWidth: 150,

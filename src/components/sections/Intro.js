@@ -2,7 +2,9 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import { Grid, Button } from '@material-ui/core'
 import phone from '../../assets/img/hand-holding.png'
-import img from '../../assets/img/intro-bg.jpeg'
+import bg from '../../assets/img/intro-bg.jpeg'
+import ios from '../../assets/img/ios.png'
+import android from '../../assets/img/android.png'
 
 const styles = theme => ({
   root: {
@@ -16,7 +18,7 @@ const styles = theme => ({
     right: 0,
 		opacity: 0.25,
 		zIndex: -1,
-    background: `url(${img})`,
+    background: `url(${bg})`,
     backgroundSize: 'cover',
   },
   rootGrid: {
@@ -28,6 +30,9 @@ const styles = theme => ({
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center',
     },
+  },
+  link: {
+    maxHeight: 40,
   },
   imgContainer: {
 		textAlign: 'right',
@@ -50,12 +55,14 @@ const Intro = (props) => (
     <div className='wrapper'>
       <Grid container spacing={24} className={props.classes.rootGrid}>
         <Grid item xs={12} sm={7}>
-          <h2 style={{ marginLeft: 24 }}>HourTech</h2>
-          <p style={{marginLeft: 24}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor felis, dignissim quis nisl porta, euismod tincidunt massa. In finibus vehicula lectus, eu faucibus felis euismod id. Sed quis orci eget libero placerat suscipit eu at lectus. Duis tincidunt auctor elit, quis cursus sapien fringilla vel. Vestibulum et mauris ut augue porta pretium. Cras auctor tellus in tellus venenatis, vel porttitor erat fringilla. Fusce quis placerat nunc.</p>
+          <div style={{ marginLeft: 24 }}>
+          <h2>HourTech</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor felis, dignissim quis nisl porta, euismod tincidunt massa. In finibus vehicula lectus, eu faucibus felis euismod id. Sed quis orci eget libero placerat suscipit eu at lectus. Duis tincidunt auctor elit, quis cursus sapien fringilla vel. Vestibulum et mauris ut augue porta pretium. Cras auctor tellus in tellus venenatis, vel porttitor erat fringilla. Fusce quis placerat nunc.</p>
           <div>
-            <Button href="#ios">Download for iOS</Button>
-            <Button href="#android">Download for Android</Button>
+            <a href="#"><img className={props.classes.link} src={ios} alt="Download for iOS" /></a>
+            <a href="#"><img className={props.classes.link} src={android} alt="Download for Android" /></a>
           </div>
+        </div>
         </Grid>
 				<Grid item xs={12} sm={5} className={props.classes.imgContainer}>
           <img src={phone} alt='A hand holding a phone featured HourTech app' width={200} className={props.classes.img} />
