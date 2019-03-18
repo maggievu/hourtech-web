@@ -14,6 +14,11 @@ const styles = theme => ({
     image: {
         maxWidth: 150,
         borderRadius: 15,
+    },
+    connect: {
+        marginLeft: 5,
+        marginRight: 5,
+        color: theme.palette.primary.main,
     }
 })
 
@@ -23,9 +28,9 @@ const Member = (props) => (
         <h3>{props.memberName}</h3>
         <p>{props.memberRole}</p>
         <p>{props.memberDesc}</p>
-        <p className="connect-me">
-            <a href={props.memberLinkedin} target="_blank" rel="noopener noreferrer"><span className="fab fa-linkedin"></span></a>
-            {props.memberGithub ? <a href={props.memberGithub} target="_blank" rel="noopener noreferrer"><span className="fab fa-github"></span></a> : null}
+        <p>
+            <a href={props.memberLinkedin} target="_blank" rel="noopener noreferrer" className={props.classes.connect}><span className="fab fa-linkedin"></span></a>
+            {props.memberGithub ? <a href={props.memberGithub} target="_blank" rel="noopener noreferrer" className={props.classes.connect}><span className="fab fa-github"></span></a> : null}
         </p>
     </div>
 )
