@@ -79,7 +79,7 @@ class Contact extends Component {
     renderForm() {
         return (
             <form className="contact-form wrapper" onSubmit={this.handleSubmit}>
-                <h2 className='center'>Contact Us</h2>
+                <h2 className='center' id='contact'>Contact Us</h2>
                 <div className={this.props.classes.container}>
                     <label className={this.props.classes.formControl}>
                         <span className={this.props.classes.label}>Name: </span>

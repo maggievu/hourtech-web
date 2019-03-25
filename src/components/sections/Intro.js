@@ -8,7 +8,8 @@ import android from '../../assets/img/android.png'
 
 const styles = theme => ({
   root: {
-    position: 'relative',
+		position: 'relative',
+		marginTop: 70,
   },
   background: {
     position: 'absolute',
@@ -27,12 +28,31 @@ const styles = theme => ({
     // height: 600,
     marginTop: 0,
     alignItems: 'center',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       textAlign: 'center',
     },
-  },
+	},
+	content: {
+		marginTop: 30, 
+		marginBottom: 30,
+		[theme.breakpoints.up('1250')]: {
+			marginLeft: 30,
+		},
+	},
+	contentText: {
+		[theme.breakpoints.up('md')]: {
+			paddingRight: 20,
+		},
+		[theme.breakpoints.down('md')]: {
+			maxWidth: 620,
+			marginLeft: 'auto',
+			marginRight: 'auto',
+		},
+	},
   link: {
-    maxHeight: 40,
+		maxHeight: 50,
+		marginTop: 20,
+		marginRight: 10,
   },
   imgContainer: {
 		textAlign: 'right',
@@ -42,8 +62,8 @@ const styles = theme => ({
   },
   img: {
 		display: 'block',
-		width: 450,
-    [theme.breakpoints.down('xs')]: {
+		maxWidth: 430,
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },
@@ -54,18 +74,19 @@ const Intro = (props) => (
     <div className={props.classes.background}></div>
     <div className='wrapper'>
       <Grid container spacing={24} className={props.classes.rootGrid}>
-        <Grid item xs={12} sm={7}>
-          <div style={{ marginLeft: 24 }}>
-          <h2>HourTech</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dolor felis, dignissim quis nisl porta, euismod tincidunt massa. In finibus vehicula lectus, eu faucibus felis euismod id. Sed quis orci eget libero placerat suscipit eu at lectus. Duis tincidunt auctor elit, quis cursus sapien fringilla vel. Vestibulum et mauris ut augue porta pretium. Cras auctor tellus in tellus venenatis, vel porttitor erat fringilla. Fusce quis placerat nunc.</p>
-          <div>
-            <a href="#"><img className={props.classes.link} src={ios} alt="Download for iOS" /></a>
-            <a href="#"><img className={props.classes.link} src={android} alt="Download for Android" /></a>
-          </div>
-        </div>
+        <Grid item xs={12} md={7}>
+					<div className={props.classes.content}>
+          	<h2>HourTech</h2>
+						<p className={props.classes.contentText}>HourTech is a platform to connect people who need help on specific tech-related tasks (being either a software, a framework such as PowerPoint, Photoshop; or a language such as HTML, JavaScript, etc.) and people who possess the right tech-related skills. We wish to make technology accessible to everyone.</p>
+						<div>
+							<a href="#"><img className={props.classes.link} src={ios} alt="Download for iOS" /></a>
+							<a href="#"><img className={props.classes.link} src={android} alt="Download for Android" /></a>
+						</div>
+					</div>
         </Grid>
-				<Grid item xs={12} sm={5} className={props.classes.imgContainer}>
-          <img src={phone} alt='A hand holding a phone featured HourTech app' width={200} className={props.classes.img} />
+
+				<Grid item xs={12} md={5} className={props.classes.imgContainer}>
+          <img src={phone} alt='A hand holding a phone featured HourTech app' className={props.classes.img} />
         </Grid>
       </Grid>
     </div>

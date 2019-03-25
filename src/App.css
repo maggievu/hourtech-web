@@ -1,13 +1,39 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Overpass:400,400i,600,800|Raleway:400,400i,600,700");
+
+@import url("https://prod.teamgantt.com/gantt/export/pdf/?projects=1475827&public_keys=&user_resources=&company_resources=&project_resources=&hide_completed=0&user_date=2019-03-25&date_filter=&color_filter=&baselines=&rand=091327&page_size=A3&orientation=l&pdf_task_date_format=&display_dependencies=1&display_name_in_bars=1&show_name_next_to_bar=0&pdf_font_face=helvetica&pdf_font_size=7.5&task_list=small&show_project_name_on_bar=1&color=default&date_format=&date_range_start=&date_range_end=");
 
 .App {
-  margin: 0;
+	margin: 0;
+	font-family: Overpass, Helvetica, Arial, sans-serif;
 }
 
-.marginY {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+h1, h2, h3, h4, h5 {
+	font-family: Raleway, Helvetica, Arial, sans-serif !important;
 }
+
+h6 {
+	font-weight: 600 !important;
+	font-size: 16px !important;
+}
+
+h1, h2 {
+	color: #154b9c;
+	font-size: 2rem;
+}
+
+h2 {
+	margin-top: 0;
+	padding-top: 3rem;
+}
+
+.marginTop {
+  margin-top: 2rem;
+}
+
+
+/* .paddingTop {
+} */
 
 .wrapper {
   max-width: 1200px;

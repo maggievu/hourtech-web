@@ -11,16 +11,21 @@ import Menu from '@material-ui/core/Menu'
 import { fade } from '@material-ui/core/styles/colorManipulator'
 import { withStyles } from '@material-ui/core/styles'
 import Image from '@material-ui/icons/Image'
-import Features from '@material-ui/icons/Apps'
-import Pricing from '@material-ui/icons/AttachMoney'
-import Contact from '@material-ui/icons/ContactSupport'
+import logo from '../../assets/logos/logo.png' 
 import MenuIcon from '@material-ui/icons/Menu'
 import SearchIcon from '@material-ui/icons/Search'
 
 const styles = theme => ({
   root: {
     width: '100%',
-    background: theme.palette.primary.main,
+		background: theme.palette.primary.main,
+		"& a": {
+			color: theme.palette.common.white,
+			textDecoration: 'none',
+		},
+		position: 'fixed',
+		top: 0,
+		zIndex: 1,
   },
   appBar: {
     boxShadow: 'none',
@@ -40,10 +45,15 @@ const styles = theme => ({
     flexGrow: 1,
   },
   menuButton: {
-    marginLeft: 0,
-    marginRight: 0,
+		[theme.breakpoints.down('md')]: {
+			marginLeft: 15,
+		},
+		marginRight: 0,
+		width: 60,
   },
   title: {
+		fontSize: 20,
+		fontWeight: 600,
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
@@ -91,7 +101,7 @@ const styles = theme => ({
   sectionDesktop: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
-      display: 'flex',
+			display: 'flex',
     },
   },
   sectionMobile: {
@@ -153,27 +163,15 @@ class NavBar extends Component {
         onClose={this.handleMenuClose}
       >
         <MenuItem onClick={this.handleMobileMenuClose}>
-          <IconButton color="inherit">
-            <Features />
-          </IconButton>
           <p>Features</p>
         </MenuItem>
         <MenuItem onClick={this.handleMobileMenuClose}>
-          <IconButton color="inherit">
-            <Pricing />
-          </IconButton>
           <p>Pricing</p>
         </MenuItem>
         <MenuItem onClick={this.handleProfileMenuOpen}>
-          <IconButton color="inherit">
-            <Contact />
-          </IconButton>
           <p>About</p>
         </MenuItem>
         <MenuItem onClick={this.handleProfileMenuOpen}>
-          <IconButton color="inherit">
-            <Contact />
-          </IconButton>
           <p>Contact</p>
         </MenuItem>
       </Menu>
@@ -188,40 +186,44 @@ class NavBar extends Component {
         >
           <Toolbar className={classes.toolBar}>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-              <Image />
+              <img src={logo} alt="HourTech Logo"  />
             </IconButton>
-            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+            <Typography className={classes.title} variant="h3" color="inherit" noWrap>
               HourTech
             </Typography>
-            <div className={classes.search}>
+            {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
-                <SearchIcon />
+							<SearchIcon />
               </div>
               <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                />
-            </div>
+							placeholder="Search…"
+							classes={{
+								root: classes.inputRoot,
+								input: classes.inputInput,
+							}}
+							/>
+            </div> */}
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Button color="inherit">
-                <Features />
-                <p>Features</p>
+              <Button color="inherit" style={{ marginRight: 15 }}>
+								<Typography variant="h6" color="inherit" noWrap>
+									<p><a href="#features">Features</a></p>
+								</Typography>
               </Button>
-              <Button color="inherit">
-                <Pricing />
-                <p>Pricing</p>
+              <Button color="inherit" style={{ marginRight: 15 }}>
+								<Typography variant="h6" color="inherit" noWrap>
+									<p><a href="#pricing">Pricing</a></p>
+								</Typography>
               </Button>
-              <Button color="inherit">
-                <Contact />
-                <p>About</p>
+              <Button color="inherit" style={{ marginRight: 15 }}>
+								<Typography variant="h6" color="inherit" noWrap>
+									<p><a href="#about">About</a></p>
+								</Typography>
               </Button>
-              <Button color="inherit">
-                <Contact />
-                <p>Contact</p>
+              <Button color="inherit" style={{ marginRight: 15 }}>
+								<Typography variant="h6" color="inherit" noWrap>
+									<p><a href="#contact">Contact</a></p>
+								</Typography>
               </Button>
             </div>
             <div className={classes.sectionMobile}>
@@ -231,7 +233,6 @@ class NavBar extends Component {
             </div>
           </Toolbar>
         </AppBar>
-        {renderMenu}
         {renderMobileMenu}
       </div>
     )

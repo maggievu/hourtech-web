@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-// import cyan from '@material-ui/core/colors/cyan'
-// import blue from '@material-ui/core/colors/blue'
 
 import Header from './components/Header'
 import Main from './components/Main'
@@ -23,7 +21,21 @@ const theme = createMuiTheme({
   },
   status: {
     danger: 'orange',
-  },
+	},
+	typography: {
+		fontFamily: [
+			'Overpass',
+			'BlinkMacSystemFont',
+			'"Segoe UI"',
+			'Roboto',
+			'"Helvetica Neue"',
+			'Arial',
+			'sans-serif',
+			'"Apple Color Emoji"',
+			'"Segoe UI Emoji"',
+			'"Segoe UI Symbol"',
+		].join(','),
+	},
 })
 
 class App extends Component {
