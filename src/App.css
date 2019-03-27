@@ -47,6 +47,11 @@ h2 {
   text-align: center;
 }
 
+footer .fab {
+  color: #13bcd4;
+  font-size: 20px;
+}
+
 img {
   max-width: 100%;
   height: auto;

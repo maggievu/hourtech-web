@@ -186,7 +186,7 @@ class NavBar extends Component {
         >
           <Toolbar className={classes.toolBar}>
             <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-              <img src={logo} alt="HourTech Logo"  />
+              <img src={logo} alt="HourTech Logo" />
             </IconButton>
             <Typography className={classes.title} variant="h3" color="inherit" noWrap>
               HourTech

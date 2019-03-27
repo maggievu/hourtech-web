@@ -18,7 +18,8 @@ const styles = theme => ({
 	connect: {
 		marginLeft: 5,
 		marginRight: 5,
-		color: theme.palette.primary.main,
+		color: theme.palette.secondary.main,
+		fontSize: 30,
 	}
 })
 

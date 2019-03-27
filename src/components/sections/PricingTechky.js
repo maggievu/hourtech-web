@@ -6,7 +6,7 @@ import { Card, CardHeader, CardContent } from '@material-ui/core'
 const styles = {
   root: {
     maxWidth: 500,
-    margin: 'auto',
+    margin: '2rem auto',
   },
   cardHeader: {
     borderBottom: '1px solid #eee',
