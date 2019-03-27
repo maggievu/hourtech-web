@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // app.use(express.static(`${__dirname}/../client/build`))
 
-// const path = require('path')
+const path = require('path')
 
 if (process.env.NODE_ENV === 'production') {
 	// Serve any static files
