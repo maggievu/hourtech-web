@@ -57,7 +57,7 @@ class Pricing extends Component {
   
     return (
       <div className='wrapper'>
-				<h2 className='center marginTop' id='pricing'>Pricing</h2>
+				<h2 className='center' id='pricing'>Pricing</h2>
         <Tabs
           value={this.state.value}
           onChange={this.handleChange}

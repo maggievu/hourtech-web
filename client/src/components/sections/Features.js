@@ -69,7 +69,7 @@ class Features extends Component {
       <div className={classes.root}>
 				<div className={classes.background}></div>
 				<section className='wrapper'>
-					<h2 className='center marginTop' id='features'>Features</h2>
+					<h2 className='center' id='features'>Features</h2>
 					<Tabs
 						value={this.state.value}
 						onChange={this.handleChange}

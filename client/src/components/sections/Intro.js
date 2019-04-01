@@ -9,7 +9,10 @@ import android from '../../assets/img/android.png'
 const styles = theme => ({
   root: {
 		position: 'relative',
-		marginTop: 70,
+		marginTop: 65,
+		'& h2': {
+			paddingTop: 0,
+		}
   },
   background: {
     position: 'absolute',

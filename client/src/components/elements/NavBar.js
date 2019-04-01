@@ -87,7 +87,10 @@ const styles = theme => ({
     display: 'none',
     [theme.breakpoints.up('md')]: {
 			display: 'flex',
-    },
+		},
+		'&>a': {
+			marginRight: 15,
+		},
   },
   sectionMobile: {
     display: 'flex',
@@ -117,7 +120,7 @@ class NavBar extends Component {
   }
 
   handleMobileMenuClose = () => {
-    this.setState({ mobileMoreAnchorEl: null })
+		this.setState({ mobileMoreAnchorEl: null })
   }
 
   render() {
@@ -147,17 +150,17 @@ class NavBar extends Component {
         open={isMobileMenuOpen}
         onClose={this.handleMenuClose}
       >
-        <MenuItem onClick={this.handleMobileMenuClose}>
-          <p>Features</p>
+        <MenuItem onClick={this.handleMobileMenuClose} href='#features' component='button'>
+					Features
         </MenuItem>
-        <MenuItem onClick={this.handleMobileMenuClose}>
-          <p>Pricing</p>
+        <MenuItem onClick={this.handleMobileMenuClose} href='#pricing' component='button'>
+					Pricing
         </MenuItem>
-        <MenuItem onClick={this.handleProfileMenuOpen}>
-          <p>About</p>
+        <MenuItem onClick={this.handleMobileMenuClose} href='#about' component='button'>
+					About
         </MenuItem>
-        <MenuItem onClick={this.handleProfileMenuOpen}>
-          <p>Contact</p>
+        <MenuItem onClick={this.handleMobileMenuClose} href='#contact' component='button'>
+					Contact
         </MenuItem>
       </Menu>
     )
@@ -190,24 +193,24 @@ class NavBar extends Component {
             </div> */}
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <Button color="inherit" style={{ marginRight: 15 }}>
+							<Button href="#features" color="inherit">
 								<Typography variant="h6" color="inherit" noWrap>
-									<p><a href="#features">Features</a></p>
+									Features
 								</Typography>
               </Button>
-              <Button color="inherit" style={{ marginRight: 15 }}>
+              <Button href="#pricing" color="inherit">
 								<Typography variant="h6" color="inherit" noWrap>
-									<p><a href="#pricing">Pricing</a></p>
+									Pricing
 								</Typography>
               </Button>
-              <Button color="inherit" style={{ marginRight: 15 }}>
+              <Button href="#about" color="inherit">
 								<Typography variant="h6" color="inherit" noWrap>
-									<p><a href="#about">About</a></p>
+									About
 								</Typography>
               </Button>
-              <Button color="inherit" style={{ marginRight: 15 }}>
+              <Button href="#contact" color="inherit">
 								<Typography variant="h6" color="inherit" noWrap>
-									<p><a href="#contact">Contact</a></p>
+									Contact
 								</Typography>
               </Button>
             </div>

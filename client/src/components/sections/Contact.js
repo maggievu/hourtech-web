@@ -59,7 +59,7 @@ class Contact extends Component {
     //         sending: true
     //     })
 
-    //     await axios.post(this.state)
+        // await axios.post(path + '/api/form', this.state)
     //         .then(res => {
     //             if (res.data.message === 'success') {
     //                 this.setState({

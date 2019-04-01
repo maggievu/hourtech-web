@@ -19,20 +19,16 @@ h2 {
 	color: #154b9c;
 	font-size: 2rem;
 	margin-top: 0;
-	padding-top: 3rem;
+	padding-top: 90px;
+}
+
+#contact {
+	padding-top: 60px;
 }
 
 h3 {
 	font-size: 1.5rem;
 }
-
-.marginTop {
-  margin-top: 2rem;
-}
-
-
-/* .paddingTop {
-} */
 
 .wrapper {
   max-width: 1200px;
