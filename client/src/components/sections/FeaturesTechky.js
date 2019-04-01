@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core'
-import phone from '../../assets/img/phone-screen.png'
+import portfolio from '../../assets/img/portfolio.png'
 
 const styles = {
   root: {
@@ -14,19 +14,19 @@ const styles = {
 const FeaturesClients = (props) => (
   <Grid container spacing={40} className={props.classes.root}>
     <Grid item xs={12} md={4}>
-      <img width={200} src={phone} alt='Features for Techkies' />
-      <h4>Feature T1</h4>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diamnonummy nibh euismod tincidunt ut laoreet dolore</p>
+      <img width={200} src={portfolio} alt='Features for Techkies' />
+      <h3>Pre-vetted</h3>
+      <p>Send us your previous works to become certified</p>
     </Grid>
     <Grid item xs={12} md={4}>
-      <img width={200} src={phone} alt='Features for Techkies' />
-      <h4>Feature T2</h4>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diamnonummy nibh euismod tincidunt ut laoreet dolore</p>
+      <img width={200} src={portfolio} alt='Features for Techkies' />
+      <h3>Rating</h3>
+      <p>Rate and review the client that you worked for</p>
     </Grid>
     <Grid item xs={12} md={4}>
-      <img width={200} src={phone} alt='Features for Techkies' />
-      <h4>Feature T3</h4>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diamnonummy nibh euismod tincidunt ut laoreet dolore</p>
+      <img width={200} src={portfolio} alt='Features for Techkies' />
+      <h3>Messaging</h3>
+      <p>Private and secure chat with the client </p>
     </Grid>
   </Grid>
 )

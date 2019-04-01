@@ -1,6 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import { Grid, Button } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import phone from '../../assets/img/hand-holding.png'
 import bg from '../../assets/img/intro-bg.jpeg'
 import ios from '../../assets/img/ios.png'
@@ -20,7 +20,8 @@ const styles = theme => ({
 		opacity: 0.25,
 		zIndex: -1,
     background: `url(${bg})`,
-    backgroundSize: 'cover',
+		backgroundSize: 'cover',
+		backgroundPosition: 'right bottom',
   },
   rootGrid: {
     flexGrow: 1,
@@ -38,6 +39,9 @@ const styles = theme => ({
 		[theme.breakpoints.up('1250')]: {
 			marginLeft: 30,
 		},
+		[theme.breakpoints.down('md')]: {
+			marginLeft: 20,
+		}
 	},
 	contentText: {
 		[theme.breakpoints.up('md')]: {
@@ -79,8 +83,8 @@ const Intro = (props) => (
           	<h2>HourTech</h2>
 						<p className={props.classes.contentText}>HourTech is a platform to connect people who need help on specific tech-related tasks (being either a software, a framework such as PowerPoint, Photoshop; or a language such as HTML, JavaScript, etc.) and people who possess the right tech-related skills. We wish to make technology accessible to everyone.</p>
 						<div>
-							<a href="#"><img className={props.classes.link} src={ios} alt="Download for iOS" /></a>
-							<a href="#"><img className={props.classes.link} src={android} alt="Download for Android" /></a>
+							<a href="#ios"><img className={props.classes.link} src={ios} alt="Download for iOS" /></a>
+							<a href="#android"><img className={props.classes.link} src={android} alt="Download for Android" /></a>
 						</div>
 					</div>
         </Grid>
@@ -93,4 +97,4 @@ const Intro = (props) => (
   </div>
 )
 
-export default (withStyles)(styles)(Intro)
+export default withStyles(styles)(Intro)

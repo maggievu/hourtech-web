@@ -1,19 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
-import InputBase from '@material-ui/core/InputBase'
-import Button from '@material-ui/core/Button'
-import MenuItem from '@material-ui/core/MenuItem'
-import Menu from '@material-ui/core/Menu'
+import { AppBar, Toolbar, IconButton, Menu, MenuItem, Button, Typography  } from '@material-ui/core'
+// import InputBase from '@material-ui/core/InputBase'
 import { fade } from '@material-ui/core/styles/colorManipulator'
 import { withStyles } from '@material-ui/core/styles'
-import Image from '@material-ui/icons/Image'
 import logo from '../../assets/logos/logo.png' 
 import MenuIcon from '@material-ui/icons/Menu'
-import SearchIcon from '@material-ui/icons/Search'
+// import SearchIcon from '@material-ui/icons/Search'
 
 const styles = theme => ({
   root: {
@@ -33,14 +26,6 @@ const styles = theme => ({
     paddingLeft: 0,
     paddingRight: 0,
   },
-  toolBar: {
-    // darkBlue: '#154b9c',
-    // darkCyan: '#13bcd4',
-    // lightBlue: '#478fcc',
-    // lightCyan: '#5ac7d9',
-    // backgroundColor: 'transparent',
-    // backgroundImage: 'linear-gradient(90deg, #154b9c 0%, #0bbcd4 100%)',
-  },
   grow: {
     flexGrow: 1,
   },
@@ -49,7 +34,7 @@ const styles = theme => ({
 			marginLeft: 15,
 		},
 		marginRight: 0,
-		width: 60,
+		width: 40,
   },
   title: {
 		fontSize: 20,
@@ -184,13 +169,13 @@ class NavBar extends Component {
           className={'wrapper ' + classes.appBar}
           color="primary"
         >
-          <Toolbar className={classes.toolBar}>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+          <Toolbar>
+						<IconButton href="https://hourtech.ca" className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <img src={logo} alt="HourTech Logo" />
             </IconButton>
-            <Typography className={classes.title} variant="h3" color="inherit" noWrap>
+            <h1 className={classes.title}>
               HourTech
-            </Typography>
+            </h1>
             {/* <div className={classes.search}>
               <div className={classes.searchIcon}>
 							<SearchIcon />

@@ -3,8 +3,11 @@ import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
   root: {
-    flexGrow: 0,
-    flexBasis: 50,
+		flexGrow: 0,
+		flexBasis: 50,
+		[theme.breakpoints.down('sm')]: {
+			// flexBasis: '100%',
+		},
   },
   rootFlex: {
     display: 'flex',
@@ -21,10 +24,10 @@ const styles = theme => ({
 const pages = ['facebook', 'instagram', 'twitter']
 const navLinks = pages.map((page, i) => (
     <li
-      style={{ marginLeft: 20, marginRight: 20 }}
+      style={{ marginLeft: 15, marginRight: 15 }}
       key={i}
     >
-      <a href={'https://' + page + '.com'} target='_blank'>
+      <a href={'https://' + page + '.com'} target='_blank' rel='noopener noreferrer'>
         <span className={'fab fa-' + page}></span>
       </a>
     </li>
