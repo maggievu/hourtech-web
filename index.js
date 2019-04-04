@@ -1,10 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
+const cors = require('cors')
 const port = process.env.PORT || 5000
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors());
 
 // app.use(express.static(`${__dirname}/../client/build`))
 
@@ -29,9 +31,7 @@ app.post('/api/form', (req, res) => {
         <div>
         <p>Name: ${req.body.userName}</p>
         <p>Email: ${req.body.userEmail}</p>
-        <p>Subject: ${req.body.userSubject}</p>
         <p>Message: ${req.body.userMessage}</p>
-        <p>Joined the discussion board: ${req.body.userSubscribe}</p>
         </div>
         `
 
@@ -46,9 +46,9 @@ app.post('/api/form', (req, res) => {
 
 		let mailOptions = {
 			from: req.body.userEmail,
-			to: 'maggievu91@gmail.com',
+			to: 'hourtech.ca@gmail.com',
 			replyTo: req.body.userEmail,
-			subject: req.body.userSubject,
+			subject: 'Message submitted from hourtech.ca',
 			text: req.body.userMessage,
 			html: htmlEmail
 		}
