@@ -21,7 +21,7 @@ const path = require('path')
 	});
 // }
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.listen(process.env.PORT, '0.0.0.0', () => console.log(`Listening on port ${app.url}`))
 
 const nodemailer = require('nodemailer')
 

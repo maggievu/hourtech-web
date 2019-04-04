@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/static/media/search.541f161e.png"
   },
   {
-    "revision": "79091169ed1a6ec177ef",
+    "revision": "e99ab974a238512d6cb6",
     "url": "/static/css/main.c6e8d721.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/static/media/android.a0e6e2ab.png"
   },
   {
-    "revision": "79091169ed1a6ec177ef",
-    "url": "/static/js/main.1ad2e43d.chunk.js"
+    "revision": "e99ab974a238512d6cb6",
+    "url": "/static/js/main.22c2dbe4.chunk.js"
   },
   {
     "revision": "e21119b2455849f7ceab8feec47c373c",
@@ -68,7 +68,7 @@ self.__precacheManifest = [
     "url": "/static/media/andra.7c6d2249.jpg"
   },
   {
-    "revision": "83533b9ee229115f671a628dfd7b4c2d",
+    "revision": "ee776428698ed9bcd6dc0519852aa363",
     "url": "/index.html"
   }
 ];
