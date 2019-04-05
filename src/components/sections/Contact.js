@@ -148,7 +148,7 @@ class Contact extends Component {
 	renderSuccess() {
 		return (
 			<div className='contact-success wrapper'>
-				<h2 className='center'>Contact Us</h2>
+				<h2 className='center' id='contact'>Contact Us</h2>
 				<div className={'contact-success-results ' + this.props.classes.container}>
 					<p>Thank you for contacting us. We'll get back to you within 5 days. Or you can <a href='mailto:hourtech.ca@gmail.com?subject=Hello%20from%20HourTech%20user'>email us directly</a>. </p>
 					<p><strong>Your message</strong></p>
