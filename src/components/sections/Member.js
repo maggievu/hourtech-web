@@ -20,6 +20,9 @@ const styles = theme => ({
 		marginRight: 5,
 		color: theme.palette.secondary.main,
 		fontSize: 30,
+		'&:hover': {
+			color: theme.palette.primary.main,
+		}
 	}
 })
 

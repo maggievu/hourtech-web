@@ -18,7 +18,15 @@ const theme = createMuiTheme({
       main: '#154b9c',
       light: '#478fcc',
     },
-  },
+	},
+	overrides: {
+		MuiButton: {
+			raisedPrimary: {
+				color: 'white',
+				fontWeight: 600,
+			},
+		},
+	},
   status: {
     danger: 'orange',
 	},

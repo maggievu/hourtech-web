@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import axios from 'axios'
-import { TextField, Button } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
 
 const styles = (theme) => ({
@@ -21,6 +21,9 @@ const styles = (theme) => ({
 		maxWidth: 500,
 		marginLeft: 'auto',
 		marginRight: 'auto',
+	},
+	buttonSubmit: {
+		background: theme.palette.primary.main,
 	}
 })
 
@@ -73,7 +76,7 @@ class Contact extends Component {
 
 	renderForm() {
 		return (
-			<ValidatorForm ref='form' className='contact-form wrapper' onSubmit={this.handleSubmit}>
+			<ValidatorForm ref='form' className='wrapper center' onSubmit={this.handleSubmit}>
 				<h2 className='center' id='contact'>Contact Us</h2>
 				<div className={this.props.classes.container}>
 					<TextValidator
@@ -123,7 +126,7 @@ class Contact extends Component {
 						margin='normal'
 						variant='outlined'
 					/>
-					<Button type='submit'  >
+					<Button type='submit' variant='contained' color='primary' >
 						{this.state.sending ? <span><span className='fas fa-spinner fa-spin'></span> Sending</span> : 'Send message'}
 					</Button>
 				</div>
