@@ -43,6 +43,18 @@ class Contact extends Component {
 			}
 			return true;
 		});
+		ValidatorForm.addValidationRule('min2char', value => {
+			if (value.length < 2) {
+				return false;
+			}
+			return true;
+		});
+		ValidatorForm.addValidationRule('min10char', value => {
+			if (value.length < 10) {
+				return false;
+			}
+			return true;
+		});
 	}
 
 	handleChange = e => {
@@ -87,9 +99,8 @@ class Contact extends Component {
 						value={this.state.userName}
 						onChange={this.handleChange}
 						autoComplete='name'
-						validators={['isRequired']}
-						errorMessages={['This field is required']}
-						// className={classes.TextValidator}
+						validators={['isRequired', 'min2char']}
+						errorMessages={['Please enter your name', 'Name must be a minimum of 2 characters']}
 						fullWidth={true}
 						margin='normal'
 						variant='outlined'
@@ -104,12 +115,11 @@ class Contact extends Component {
 						onChange={this.handleChange}
 						autoComplete='email'
 						validators={['isRequired', 'isEmail']}
-						errorMessages={['This field is required', 'Invalid email']}
-						// className={classes.TextValidator}
+						errorMessages={['Please enter your email', 'Email is invalid']}
 						fullWidth={true}
 						margin='normal'
 						variant='outlined'
-					/>
+						/>
 
 					<TextValidator
 						label='Tell us more'
@@ -121,7 +131,8 @@ class Contact extends Component {
 						rowsMax='8'
 						value={this.state.userMessage}
 						onChange={this.handleChange}
-						// className={classes.TextValidator}
+						validators={['isRequired', 'min10char']}
+						errorMessages={['Please enter your message', 'Message must be a minimum of 10 characters']}
 						fullWidth={true}
 						margin='normal'
 						variant='outlined'
