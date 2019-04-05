@@ -22,13 +22,13 @@ app.get('*', (req, res) => {
 // app.listen(process.env.PORT, '0.0.0.0', () => console.log(`Listening on port ${port}`))
 // app.listen(process.env.PORT, '0.0.0.0', () => console.log(`Listening on port ${server.address().port}`))
 
-let server = app.listen(process.env.PORT, '0.0.0.0', () => {
+let server = app.listen(8080, () => {
 	console.log('Server ready', server.address().port);
 });
 
 const nodemailer = require('nodemailer')
 
-app.post('/api/form', (req, res) => {
+app.post('/form', (req, res) => {
 	nodemailer.createTestAccount((err, account) => {
 		const htmlEmail = `
         <div>
