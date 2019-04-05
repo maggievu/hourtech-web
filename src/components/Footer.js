@@ -1,5 +1,6 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import { IconButton } from '@material-ui/core'
 import SocialMenu from './elements/SocialMenu'
 import logo from '../assets/logos/logo-cyan.png' 
 
@@ -12,15 +13,13 @@ const styles = theme => ({
     fontWeight: 600,
   },
   rootFlex: {
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-      flexFlow: 'row wrap',
-      alignItems: 'baseline',
-    },
+		display: 'flex',
+		flexFlow: 'row wrap',
+		alignItems: 'baseline',
     [theme.breakpoints.down('sm')]: {
-      textAlign: 'center',
-      paddingTop: 1,
-      paddingBottom: 1,
+      // textAlign: 'center',
+      // paddingTop: 1,
+      // paddingBottom: 1,
     }
   },
   flexChildren: {
@@ -28,21 +27,24 @@ const styles = theme => ({
   },
   logo: {
     width: 40,
-    verticalAlign: 'middle',
-    marginRight: 8,
-  },
+	},
+	mobileDisplay: {
+		[theme.breakpoints.down('xs')]: {
+			display: 'none',
+		}
+	},
 })
 
 const Footer = (props) => (
   <footer className={props.classes.root}>
     <div className={'wrapper ' + props.classes.rootFlex}>
       <p className={props.classes.flexChildren}>
-        <a href="https://hourtech.ca">
-          <img src={logo} alt="HourTech Logo" className={props.classes.logo} />
-        </a>
+				<IconButton href="https://hourtech.ca" className={props.classes.logo}>
+          <img src={logo} alt="HourTech Logo" />
+        </IconButton>
         HourTech
       </p>
-      <p className={props.classes.flexChildren} style={{marginTop: 30, marginBottom: 30}}>Team Hawk &copy;2019</p>
+      <p className={props.classes.flexChildren + ' ' + props.classes.mobileDisplay} style={{marginTop: 30, marginBottom: 30}}>Team Hawk &copy;2019</p>
       <SocialMenu />
     </div>
   </footer>

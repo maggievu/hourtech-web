@@ -33,7 +33,9 @@ const styles = theme => ({
 		border: '2px solid #13bcd4',
 		borderTopLeftRadius: 8,
 		borderBottomLeftRadius: 8,
-		minWidth: 250,
+		minWidth: 150,
+		width: '30vw',
+		maxWidth: 250,
 	},
 	tabRootRight: {
 		fontSize: 14,
@@ -42,7 +44,9 @@ const styles = theme => ({
 		border: '2px solid #13bcd4',
 		borderTopRightRadius: 8,
 		borderBottomRightRadius: 8,
-		minWidth: 250,
+		minWidth: 150,
+		width: '30vw',
+		maxWidth: 250,
 	},
 	tabSelected: {
 		backgroundColor: theme.palette.secondary.main
@@ -65,7 +69,7 @@ class Features extends Component {
       <div className={classes.root}>
 				<div className={classes.background}></div>
 				<section className='wrapper'>
-					<h2 className='center marginTop' id='features'>Features</h2>
+					<h2 className='center' id='features'>Features</h2>
 					<Tabs
 						value={this.state.value}
 						onChange={this.handleChange}

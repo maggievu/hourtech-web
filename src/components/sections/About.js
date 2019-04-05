@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Member from './Member'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -22,7 +22,7 @@ const styles = theme => ({
 	},
 	backgroundColor: {
 		position: 'absolute',
-		top: 0,
+		top: 50,
 		bottom: 0,
 		left: 0,
 		right: 0,
@@ -32,7 +32,7 @@ const styles = theme => ({
 	},
 	backgroundImage: {
 		position: 'absolute',
-		top: 0,
+		top: 50,
 		bottom: 0,
 		left: 0,
 		right: 0,
@@ -51,7 +51,7 @@ const About = (props) => (
     <div className={props.classes.root}>
         <div className={props.classes.backgroundColor}></div>
         <div className={props.classes.backgroundImage}></div>
-        <section className="wrapper center marginTop">
+        <section className="wrapper center">
 
             <h2 id='about'>About Us</h2>
             <p>
