@@ -54,7 +54,7 @@ class Contact extends Component {
 			sending: true
 		})
 
-		await axios.post('/api/form', this.state)
+		await axios.post('api/form', this.state)
 			.then(res => {
 				if (res.data.message === 'success') {
 					this.setState({
