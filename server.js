@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const cors = require('cors')
 const port = process.env.PORT || 8080
+require('dotenv').config()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -37,8 +38,8 @@ app.post('/form', (req, res) => {
 			host: 'smtp.mailgun.org',
 			port: 587,
 			auth: {
-				user: "postmaster@sandbox3d5d1673a19941b6bad15f59c7585e15.mailgun.org",
-				pass: "123456aS"
+				user: process.env.USER,
+				pass: process.env.PASS
 			}
 		});
 

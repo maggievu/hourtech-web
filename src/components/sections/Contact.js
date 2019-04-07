@@ -23,7 +23,9 @@ const styles = (theme) => ({
 		marginRight: 'auto',
 	},
 	buttonSubmit: {
-		background: theme.palette.primary.main,
+		'&:hover': {
+			background: theme.palette.primary.light,
+		}
 	}
 })
 
@@ -137,7 +139,7 @@ class Contact extends Component {
 						margin='normal'
 						variant='outlined'
 					/>
-					<Button type='submit' variant='contained' color='primary' >
+					<Button type='submit' variant='contained' color='primary' className={this.props.classes.buttonSubmit}>
 						{this.state.sending ? <span><span className='fas fa-spinner fa-spin'></span> Sending</span> : 'Send message'}
 					</Button>
 				</div>
