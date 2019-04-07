@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core'
 import portfolio from '../../assets/img/portfolio.png'
 import messageBoard from '../../assets/img/message-board.png'
-// import portfolio from '../../assets/img/portfolio.png'
+// import activity from '../../assets/img/activity.png'
 
 const styles = {
   root: {
