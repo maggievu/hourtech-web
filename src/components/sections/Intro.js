@@ -5,6 +5,7 @@ import phone from '../../assets/img/hand-holding.png'
 import bg from '../../assets/img/intro-bg.jpeg'
 import ios from '../../assets/img/ios.png'
 import android from '../../assets/img/android.png'
+import Oauth from './Oauth'
 
 const styles = theme => ({
   root: {
@@ -88,6 +89,7 @@ const Intro = (props) => (
 						<div>
 							<a href="#ios"><img className={props.classes.link} src={ios} alt="Download for iOS" /></a>
 							<a href="#android"><img className={props.classes.link} src={android} alt="Download for Android" /></a>
+							<Oauth />
 						</div>
 					</div>
         </Grid>
