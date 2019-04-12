@@ -38,8 +38,8 @@ app.post('/form', (req, res) => {
 			host: 'smtp.mailgun.org',
 			port: 587,
 			auth: {
-				user: process.env.USER,
-				pass: process.env.PASS
+				user: REACT_APP_USER,
+				pass: REACT_APP_PASS
 			}
 		});
 
